@@ -7,7 +7,7 @@ export function MetaHead(props) {
   
   // Generate dynamic OG image URL if no imageUrl is provided
   const ogImageUrl = imageUrl || 
-    `${siteData.websiteUrl}/api/og?title=${encodeURIComponent(titleName)}${date ? `&date=${encodeURIComponent(date)}` : ''}`;
+    `${siteData.websiteUrl || process.env.NEXT_PUBLIC_SITE_URL || ''}/api/og?title=${encodeURIComponent(titleName)}${date ? `&date=${encodeURIComponent(date)}` : ''}`;
 
   return (
     <Head>

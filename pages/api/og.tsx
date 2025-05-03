@@ -21,7 +21,6 @@ export default function handler(req: NextRequest) {
           alignItems: 'flex-start',
           justifyContent: 'center',
           backgroundColor: 'white',
-          backgroundImage: 'linear-gradient(to bottom right, #fff, #f5f5f5)',
           padding: '40px 80px',
         }}
       >
@@ -30,7 +29,6 @@ export default function handler(req: NextRequest) {
             display: 'flex',
             fontSize: 60,
             fontWeight: 'bold',
-            letterSpacing: '-0.025em',
             color: 'black',
             marginBottom: 24,
             lineHeight: 1.2,

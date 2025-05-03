@@ -15,5 +15,26 @@ module.exports = {
       'prod-files-secure.s3.us-west-2.amazonaws.com'
     ]
   },
-  // The webpack function has been removed
+
+  // **** ADD THIS WHOLE SECTION BACK ****
+  webpack: (config, { isServer }) => {
+    // Skip problematic dependencies on client
+    if (!isServer) {
+      config.resolve.alias['chrome-aws-lambda'] = false;
+      config.resolve.alias['next-api-og-image'] = false;
+      config.resolve.alias['puppeteer-core'] = false;
+    }
+
+    // Ignore map files during build
+    config.module.rules.push({
+      test: /\.map$/,
+      use: 'ignore-loader'
+    });
+
+    // Optional: Ignore source map warnings (less critical)
+    config.ignoreWarnings = [/Failed to parse source map/];
+
+    return config;
+  }
+  // **** END OF SECTION TO ADD ****
 };

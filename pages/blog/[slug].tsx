@@ -28,7 +28,7 @@ const ArticlePage = ({
   //   title
   // )}&date=${encodeURIComponent(publishedOn)}`;
 
-  const ogImage = `${siteData.websiteUrl}/api/og-image?title=${encodeURIComponent(
+  const ogImage = `${siteData.websiteUrl}/api/og?title=${encodeURIComponent(
     title
   )}&date=${encodeURIComponent(publishedOn)}`;
 

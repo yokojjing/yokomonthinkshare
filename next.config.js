@@ -1,4 +1,3 @@
-// next.config.js
 module.exports = {
   images: {
     // Your existing image configuration
@@ -18,16 +17,16 @@ module.exports = {
   },
   
   webpack: (config, { isServer }) => {
-    // More specific configuration to handle the chrome-aws-lambda source maps
+    // Skip problematic dependencies
+    if (!isServer) {
+      config.resolve.alias['chrome-aws-lambda'] = false;
+      config.resolve.alias['next-api-og-image'] = false;
+      config.resolve.alias['puppeteer-core'] = false;
+    }
+    
+    // Ignore map files
     config.module.rules.push({
       test: /\.map$/,
-      include: /node_modules\/chrome-aws-lambda/,
-      use: 'ignore-loader'
-    });
-    
-    // Also add a general rule to ignore all source maps in node_modules
-    config.module.rules.push({
-      test: /\.js\.map$/,
       use: 'ignore-loader'
     });
     

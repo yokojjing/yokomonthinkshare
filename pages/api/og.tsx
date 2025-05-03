@@ -4,7 +4,7 @@ export {};
 
 // Use edge runtime for best performance with @vercel/og
 export const config = {
-  runtime: 'edge',
+  runtime: 'experimental-edge',
 };
 
 // --- YOUR OG IMAGE COMPONENT ---

@@ -1,5 +1,5 @@
 const siteData = {
-  title: 'Think Share Blog for Yokomon',
+  title: 'Yokomon\'s Think Share Blog',
   author: 'Yokomon',
   headerTitle: 'Yokomon Think Share',
   profileUrl: '/yokomon_pencil_trans.png',

@@ -62,7 +62,7 @@ const ArticlePage = ({
             </div>
           </div>
 
-          <div className="max-w-5xl px-6 mx-auto my-16 md:px-8">
+          <div className="max-w-3xl px-6 mx-auto my-12 md:px-8">
             <Image
               className="rounded-lg aspect-video"
               objectFit="cover"
@@ -70,8 +70,8 @@ const ArticlePage = ({
               placeholder="blur"
               blurDataURL={thumbnail}
               layout="intrinsic"
-              width={1200}
-              height={684}
+              width={800}
+              height={450}
               alt={'article cover'}
               priority
             />
